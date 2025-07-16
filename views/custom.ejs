@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Custom Order</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+  <style>
+    .footer {
+      position: fixed;
+      padding: 1rem;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      background-color: rgb(7, 0, 0);
+      color: white;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER SECTION -->
+  <header class="bg-dark text-white py-4">
+    <div class="container text-center">
+      <h1 class="display-3 fw-bold">FLORAL FANTASY</h1>
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container justify-content-center">
+        <ul class="navbar-nav">
+          <li class="nav-item px-3"><a class="nav-link" href="./">Home</a></li>
+          <li class="nav-item px-3"><a class="nav-link " href="./collection">Christmas Special</a></li>
+          <li class="nav-item px-3"><a class="nav-link" href="./birthday">Birthday Special</a></li>
+          <li class="nav-item px-3"><a class="nav-link " href="./roses">Roses Special</a></li>
+          <li class="nav-item px-3"><a class="nav-link active" href="./custom">Custom Order</a></li>
+          <li class="nav-item px-3"><a class="nav-link" href="./about">About Us</a></li>
+          <li class="nav-item px-3"><a class="nav-link" href="./faq">FAQs</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- CUSTOM ORDER SECTION -->
+  <section class="container my-5 pb-5">
+    <h2 class="text-center mb-4">Create Your Custom Bouquet</h2>
+    <form action="/custom" method="POST">
+      <div class="row g-3">
+        <div class="col-md-6">
+          <label for="flowerType" class="form-label">Choose Flower Type</label>
+          <select id="flowerType" name="flowerType" class="form-select">
+            <option selected>Select...</option>
+            <option value="roses">Roses</option>
+            <option value="tulips">Tulips</option>
+            <option value="lilies">Lilies</option>
+            <option value="mixed">Mixed</option>
+          </select>
+        </div>
+
+        <div class="col-md-6">
+          <label for="colorPreference"   class="form-label">Color Preference</label>
+          <input type="text" class="form-control" name="colorPreference" id="colorPreference" placeholder="e.g., Red, Pink, Pastel">
+        </div>
+
+        <div class="col-md-6">
+          <label for="wrapStyle" class="form-label">Wrapping Style</label>
+          <select id="wrapStyle" name="wrapStyle" class="form-select">
+            <option selected>Choose wrapping</option>
+            <option value="kraft">Kraft Paper</option>
+            <option value="net">Net Wrap</option>
+            <option value="box">Gift Box</option>
+          </select>
+        </div>
+
+        <div class="col-md-6">
+          <label for="noteMessage" class="form-label">Personal Message</label>
+          <textarea id="noteMessage" name="noteMessage" class="form-control" rows="3" placeholder="Optional message to include..."></textarea>
+        </div>
+
+        <div class="col-12">
+          <label for="deliveryDate" class="form-label">Preferred Delivery Date</label>
+          <input type="date" class="form-control" name="deliveryDate" id="deliveryDate">
+        </div>
+
+        <div class="col-12 text-center">
+          <button type="submit" class="btn btn-success mt-3">Submit Custom Order</button>
+        </div>
+      </div>
+    </form>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>&copy; 2025 Floral Fantasy | All Rights Reserved</p>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz4fnFO9gyb+N9Z1F77pEnVXoCjU2zvDqz7lqXw1X4V2RxpQZGg1zG1x6t" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+    integrity="sha384-cu0MZop8sZsZ7gA1wT0UlYzj0FwmZTURVGmSqaRuzHpu+Wk6DbtTyzErBSt8Gei8" crossorigin="anonymous"></script>
+</body>
+
+</html>

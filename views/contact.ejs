@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Place Your Order - Floral Fantasy</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #fff0f5;
+    }
+
+    .form-container {
+      background-color: #ffffff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-control:focus {
+      box-shadow: 0 0 5px rgba(4, 170, 109, 0.6);
+      border-color: #04AA6D;
+    }
+
+    .btn-custom {
+      background-color: #04AA6D;
+      color: white;
+      border: none;
+    }
+
+    .btn-custom:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER SECTION -->
+  <header class="bg-dark text-white py-4">
+    <div class="container text-center">
+      <h1 class="display-3 fw-bold">FLORAL FANTASY</h1>
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container justify-content-center">
+        <ul class="navbar-nav">
+          <li class="nav-item px-3"><a class="nav-link" href="./">Home</a></li>
+          <li class="nav-item px-3"><a class="nav-link" href="./collection">Christmas Special</a></li>
+          <li class="nav-item px-3"><a class="nav-link" href="./birthday">Birthday Special</a></li>
+          <li class="nav-item px-3"><a class="nav-link" href="./roses">Roses Special</a></li>
+          <li class="nav-item px-3"><a class="nav-link" href="./custom">Custom Order</a></li>
+          <li class="nav-item px-3"><a class="nav-link" href="./about">About Us</a></li>
+          <li class="nav-item px-3"><a class="nav-link" href="./faq">FAQs</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ORDER FORM SECTION -->
+  <main class="container-lg my-5">
+    <h2 class="text-center mb-4">Place Your Order</h2>
+
+    <div class="form-container mx-auto col-md-8 col-lg-6">
+      <form action="/contact" method="POST">
+        <!-- Name -->
+        <div class="mb-3">
+          <label for="name" class="form-label">Name</label>
+          <input type="text" class="form-control" id="fname" name="name" placeholder="Your name..." required>
+        </div>
+
+        <div class="mb-3">
+          <label for="address" class="form-label">Address</label>
+          <input type="text" class="form-control" id="address" name="address" placeholder="Your full address..." required>
+        </div>
+
+        <!-- Contact Details -->
+        <div class="mb-3">
+          <label for="email" class="form-label">Email Address</label>
+          <input type="email" class="form-control" id="email" name="email" placeholder="Your email..." required>
+        </div>
+
+        <div class="mb-3">
+          <label for="phone" class="form-label">Contact Number</label>
+          <input type="tel" class="form-control" id="phone" name="phone" placeholder="Your contact number..." required>
+        </div>
+
+        <!-- Product Selection -->
+        <div class="mb-3">
+          <label for="product" class="form-label">Select Product</label>
+          <select id="product" name="product" class="form-select" required>
+            <option value="" disabled selected>Select a product</option>
+            <option value="christmas">Christmas Special</option>
+            <option value="roses">Roses Special</option>
+            <option value="birthday">Birthday Special</option>
+          </select>
+        </div>
+        <!-- Roses Types (hidden by default) -->
+<div class="mb-3" id="rose-types-container" style="display: none;">
+  <label for="roseType" class="form-label">Select Rose Type</label>
+  <select id="roseType" name="roseType" class="form-select">
+    <option value="" disabled selected>Select a rose type</option>
+    <option value="red">Black Rose Special</option>
+    <option value="white">Pretty Pink Combo</option>
+    <option value="pink">Blue Roses</option>
+    <option value="yellow">Bunch Of Pink And Red Roses</option>
+    <option value="blue">Yellow Roses</option>
+    <option value="mixed">Yellow and Blue Min</option>
+  </select>
+</div>
+
+<!-- Birthday Items (hidden by default) -->
+<div class="mb-3" id="birthday-types-container" style="display: none;">
+  <label for="birthdayType" class="form-label">Select Birthday Item</label>
+  <select id="birthdayType" name="birthdayType" class="form-select">
+    <option value="" disabled selected>Select a birthday item</option>
+    <option value="cake">Birthday Bash Bouquet</option>
+    <option value="balloons">Birthday Bright Bouquet</option>
+    <option value="candles">Happy Birthday Topper</option>
+    <option value="giftbox">Pretty Bouquet</option>
+    <option value="birthdaybouquet">Blush Crush Bouquet</option>
+    <option value="confetti">Radiant Bloom Arrangement</option>
+  </select>
+</div>
+
+<!-- Christmas Items (hidden by default) -->
+<div class="mb-3" id="christmas-types-container" style="display: none;">
+  <label for="christmasType" class="form-label">Select Christmas Item</label>
+  <select id="christmasType" name="christmasType" class="form-select">
+    <option value="" disabled selected>Select a Christmas item</option>
+    <option value="tree">Sparkling Snowflakes Bouquet</option>
+    <option value="wreath">By The CandleLight Centerpiece</option>
+    <option value="stockings">Peppermint Chill Bouquet</option>
+    <option value="bells">Sleigh Ride Bouquet</option>
+    <option value="giftset">Happiest Holiday Poinsettia</option>
+    <option value="candlelights">Merry Moment Bouquet</option>
+  </select>
+</div>
+
+        <!-- Quantity -->
+        <div class="mb-3">
+          <label for="quantity" class="form-label">Quantity</label>
+          <input type="number" class="form-control" id="quantity" name="quantity" value="1" min="1" required>
+        </div>
+
+        <!-- Special Requests -->
+        <div class="mb-3">
+          <label for="message" class="form-label">Special Requests or Notes</label>
+          <textarea id="message" name="message" class="form-control" placeholder="Any special requests..." rows="4"></textarea>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="text-center">
+          <button type="submit" class="btn btn-custom px-4">Place Order</button>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="text-center text-bg-dark text-white py-4 mt-5">
+    <p>&copy; 2025 Floral Fantasy | All Rights Reserved</p>
+  </footer>
+<script>
+  const productSelect = document.getElementById("product");
+  const roseTypes = document.getElementById("rose-types-container");
+  const birthdayTypes = document.getElementById("birthday-types-container");
+  const christmasTypes = document.getElementById("christmas-types-container");
+
+  productSelect.addEventListener("change", function () {
+    const selected = this.value;
+
+    // Hide all sub dropdowns first
+    roseTypes.style.display = "none";
+    birthdayTypes.style.display = "none";
+    christmasTypes.style.display = "none";
+
+    // Show only the relevant one
+    if (selected === "roses") {
+      roseTypes.style.display = "block";
+    } else if (selected === "birthday") {
+      birthdayTypes.style.display = "block";
+    } else if (selected === "christmas") {
+      christmasTypes.style.display = "block";
+    }
+  });
+</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
